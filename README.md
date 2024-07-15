@@ -38,3 +38,4 @@ Polish code and replace the placeholders with the official designs.
 - Revise code
 - Correct mistakes and inconsistencies
 - Import and apply the final designs of the elements
+- Prepare presentation
