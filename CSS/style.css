@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    background-color: #800020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    width: 60vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* START SCREEN */
+
+#starting-screen {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+#starting-menu {
+    width: 40%;
+    height: 50%;
+    padding: 30px;
+    background-color: rgb(87, 20, 20);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(79, 41, 13, 0.59);
+}
+
+hr {
+    width: 60%;
+    margin: 7px;
+}
+
+#start-btn {
+    width: 40%;
+    height: 12%;
+    margin: 20px;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#start-btn button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+}
+
+/* MAIN GAME AREA */
+
+#main-screen {
+    width: 60vw;
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+
+/* BOSS INFO AND BOSS SPRITE AREA*/
+
+#boss-area {
+    width: 100%;
+    height: 50%;
+    background-color: #8000206f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#boss-name {
+    color: rgb(183, 169, 169);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#boss-life {
+    width: 70%;
+    height: 5%;
+    background-color: rgba(255, 255, 255, 0.762);
+}
+#boss {
+    width: 50%;
+    height: 95%;
+    background-color: #801e00ac;
+}
+
+
+
+/* GAMEPLAY AREA */
+
+#game-area {
+    width: 40%;
+    height: 30%;
+    border: solid 3px white;
+    position: relative;
+
+}
+
+#player {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: blue;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.rain-attack {
+    width: 1.3em;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+/* PLAYER STATS AREA */
+
+#player-stats {
+    width: 80%;
+    height: 5%;
+    background-color: rgba(255, 166, 0, 0.644);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#player-name {
+    width: 20%;
+    height: 40%;
+}
+
+#player-life {
+    width: 30%;
+    height: 40%;
+    background-color: rgba(255, 255, 255, 0.762);
+}

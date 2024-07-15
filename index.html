@@ -5,14 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weeping Flame: Finitte</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./CSS/style.css">
 </head>
 
 <body>
+    <section id="starting-screen">
+        <div id="starting-menu">
+            <h1>The Weeping Flame</h1>
+            <h3>Finitte</h3>
+            <hr>
+            <h3>Objective</h3>
+            <p>Use the arrow keys to move around, avoid the attacks and collect counter-attack tokens to deal damage to Finitte.</p>
+            <div id="start-btn">
+                <button>START</button>
+            </div>
+        </div>
+    </section>
+    <section id="main-screen">
         <section id="boss-area">
             <div id="boss-name">
-                <h3>- Finitte -</h3>
-                <h5>------------</h5>
+                <h3>The Weeping Flame</h3>
+                <h5>- Finitte -</h5>
             </div>
             <div id="boss-life"></div>
             <div id="boss"></div>
@@ -26,10 +39,11 @@
             </div>
             <div id="player-life"></div>
         </section>
-
-    <script src="./script.js"></script>
-    <script src="./player.js"></script>
-    <script src="./boss.js"></script>
+    </section>
+    <script src="./JS/script.js"></script>
+    <script src="./JS/player.js"></script>
+    <script src="./JS/boss.js"></script>
+    <script src="./JS/rain-attack.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,9 @@
 console.log("Main linked");
 
+const game = {
+    rainAttacks: [],
+}
+
 
 const gameArea = document.querySelector("#game-area");
 
@@ -21,7 +25,17 @@ function gameLoop() { //smooth movement based on framerate
     
     player.move();
 
+    if(frames % 50 === 0) {
+        game.rainAttacks.push(new RainAttacks(3));
+    };
+
+    game.rainAttacks.forEach((rainAttack) => {
+        rainAttack.move();
+        rainAttack.exit();
+    });
+
     animationID = window.requestAnimationFrame(gameLoop)
 }
 
 animationID = window.requestAnimationFrame(gameLoop)
+console.log(game.rainAttacks);
