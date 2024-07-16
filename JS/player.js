@@ -97,5 +97,31 @@ const player = {
         if (this.positionY >= gameArea.offsetHeight - this.element.offsetHeight) {
             this.positionY = gameArea.offsetHeight - this.element.offsetHeight;
         }
+    },
+
+    checkCollisions(array, string) {
+        array.forEach((entity) => {
+            const playerLeftEdge = this.positionX;
+            const playerRightEdge = this.positionX + this.element.offsetWidth;
+            const playerTopEdge = this.positionY;
+            const playerBottomEdge = this.positionY + this.element.offsetHeight;
+            
+            const fallingEntityLeftEdge = entity.positionX;
+            const fallingEntityRightEdge = entity.positionX + entity.element.offsetWidth;
+            const fallingEntityTopEdge = entity.positionY;
+            const fallingEntityBottomEdge = entity.positionY + entity.element.offsetHeight;
+
+            if(
+                playerLeftEdge < fallingEntityRightEdge &&
+                playerRightEdge > fallingEntityLeftEdge &&
+                playerTopEdge < fallingEntityBottomEdge &&
+                playerBottomEdge > fallingEntityTopEdge
+            ) {
+                console.log("ouch");
+                entity.disappear();
+            }
+        });
+        
+
     }
 }
