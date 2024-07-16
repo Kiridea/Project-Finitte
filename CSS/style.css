@@ -30,12 +30,12 @@ body {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    z-index: 2;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(45, 10, 10, 0.5);
     color: white;
 }
 
@@ -74,6 +74,79 @@ hr {
     font-weight: bold;
 }
 
+
+/* GAME END SCREENS*/
+
+#game-over-screen {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+#game-over-menu {
+    width: 60%;
+    height: 50%;
+    padding: 30px;
+    background-color: rgb(87, 20, 20);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#win-screen {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(45, 10, 10);
+    color: white;
+}
+
+#win-menu {
+    width: 40%;
+    height: 50%;
+    padding: 30px;
+    background-color: rgb(87, 20, 20);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#win-reset-page-btn, #lose-reset-page-btn {
+    width: 40%;
+    height: 12%;
+    margin: 10px;
+    background-color: rgb(112, 89, 46);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#win-reset-page-btn p, #lose-reset-page-btn p {
+    width: 100%;
+    color: white;
+    font-weight: bold;
+}
+
+
 /* MAIN GAME AREA */
 
 #main-screen {
@@ -93,6 +166,7 @@ hr {
 #boss-area {
     width: 100%;
     height: 50%;
+    z-index: 1;
     background-color: #8000206f;
     display: flex;
     flex-direction: column;
@@ -120,7 +194,6 @@ hr {
 #boss-life-segment {
     width: 4%;
     height: 100%;
-    border: solid 1px white;
     background-color: rgb(187, 100, 76);
 }
 
@@ -197,6 +270,41 @@ hr {
 #life-segment {
     width: 10%;
     height: 100%;
-    border: solid 1px white;
     background-color: rgb(62, 104, 146);
+}
+
+@keyframes shake {
+    0% {
+    transform: translateX(0px);
+    }
+    25% {
+    transform: translateX(-5px);
+    }
+    50% {
+    transform: translateX(5px);
+    }
+    75% {
+    transform: translateX(-5px);
+    }
+    100% {
+    transform: translateX(0px);
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

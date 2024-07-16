@@ -119,9 +119,17 @@ const player = {
             ) {
                 console.log("ouch");
                 entity.disappear();
+                if(string === "attacks") {
+                    game.playerLife--;
+                    playerLifeElement.innerHTML = `<div id="life-segment"></div>`.repeat(game.playerLife);
+                    playerFlash();
+                } else if (string === "tokens") {
+                    game.bossLife--;
+                    bossLifeElement.innerHTML = `<div id="boss-life-segment"></div>`.repeat(game.bossLife);
+                    bossShake();
+                }
             }
         });
         
-
     }
 }

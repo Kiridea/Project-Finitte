@@ -1,6 +1,10 @@
 console.log("Main linked");
 const startGameButton = document.querySelector("#start-btn");
 const startingScreen = document.querySelector("#starting-screen");
+const gameOverScreen = document.querySelector("#game-over-screen");
+const winScreen = document.querySelector("#win-screen");
+const bossElement = document.querySelector("#boss");
+const playerElement = document.querySelector("#player");
 
 startGameButton.addEventListener("click", () => {
     game.hasStarted = true;
@@ -12,7 +16,31 @@ const game = {
     bossLife: 25,
     rainAttacks: [],
     counterTokens: [],
+    isOver: false,
     hasStarted: false,
+    win: false,
+    checkGameOver() {
+        if (this.playerLife <= 0) {
+            gameOverScreen.style.display = "flex";
+            this.isOver = true;
+            const exitButton = document.querySelector("#lose-reset-page-btn")
+            exitButton.addEventListener("click", () => {
+                location.reload();
+            })
+        }
+    },
+
+    checkGameWin(){
+        if(this.bossLife <= 0) {
+            winScreen.style.display = "flex";
+            this.win = true;
+            const exitButton = document.querySelector("#win-reset-page-btn")
+            exitButton.addEventListener("click", () => {
+                location.reload();
+            })
+        }
+    }
+
 };
 
 const playerLifeElement = document.querySelector("#player-life");
@@ -23,6 +51,20 @@ bossLifeElement.innerHTML = `<div id="boss-life-segment"></div>`.repeat(game.bos
 
 
 const gameArea = document.querySelector("#game-area");
+
+function bossShake() {
+    bossElement.style.animation = "shake 100ms";
+    setTimeout(() => {
+        bossElement.style.animation = "";
+    }, 100);
+}
+
+function playerFlash() {
+    playerElement.style.animation = "flash 100ms";
+    setTimeout(() => {
+        playerElement.style.animation = "";
+    }, 150);
+}
 
 document.addEventListener("keydown", (event) => {
     //move upon pressing key in the corresponding direction
@@ -40,21 +82,46 @@ let animationID;
 function gameLoop() { //smooth movement based on framerate
     frames++;
     
-    if (game.hasStarted) {
+    if (!game.isOver && game.hasStarted && !game.win) {
         player.checkCollisions(game.rainAttacks, "attacks");
         player.checkCollisions(game.counterTokens, "tokens");
         player.move();
+        game.checkGameOver();
+        game.checkGameWin();
 
-        if(frames % 50 === 0) {
-            const newAttack = new RainAttacks(3)
-            game.rainAttacks.push(newAttack);
-        };
+        if(game.bossLife > 10) {
+            if(frames % 50 === 0) {
+                const newAttack = new RainAttacks(3)
+                game.rainAttacks.push(newAttack);
+            };
+    
+            if(frames % 200 === 0) {
+                const newToken = new CounterTokens(2);
+                game.counterTokens.push(newToken);
+            };
+        }
 
-        if(frames % 200 === 0) {
-            const newToken = new CounterTokens(2);
-            game.counterTokens.push(newToken);
-        };
+        if(game.bossLife <= 10) {
+            if(frames % 30 === 0) {
+                const newAttack = new RainAttacks(3)
+                game.rainAttacks.push(newAttack);
+            };
+    
+            if(frames % 200 === 0) {
+                const newToken = new CounterTokens(2);
+                game.counterTokens.push(newToken);
+            };
 
+
+        }
+
+        if(game.bossLife <= 5) {
+            if(frames % 15 === 0) {
+                const newAttack = new RainAttacks(3)
+                game.rainAttacks.push(newAttack);
+            };
+
+        }
     }
 
     game.rainAttacks.forEach((rainAttack) => {
