@@ -9,6 +9,7 @@ const playerElement = document.querySelector("#player");
 startGameButton.addEventListener("click", () => {
     game.hasStarted = true;
     startingScreen.style.display = "none";
+    player.initializePosition();
 });
 
 const game = {

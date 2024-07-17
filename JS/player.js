@@ -7,6 +7,14 @@ const player = {
     directions: [],
     element: document.querySelector("#player"),
 
+    initializePosition() {
+        console.log("GAME AREA OFFSETWIDTH: ",gameArea.offsetWidth / 2);
+        console.log("ELEMENT OFFSETWIDTH" ,this.element.offsetWidth);
+        this.positionX = (gameArea.offsetWidth / 2 - this.element.offsetWidth/2);
+        console.log(this.positionX);
+        this.positionY = (gameArea.offsetHeight / 2) - (this.element.offsetHeight / 2);
+    },
+
     move() { //player movement
         const direction = this.directions.join("");
         console.log(this.directions);
