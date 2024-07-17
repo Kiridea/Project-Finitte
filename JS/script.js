@@ -53,17 +53,17 @@ bossLifeElement.innerHTML = `<div id="boss-life-segment"></div>`.repeat(game.bos
 const gameArea = document.querySelector("#game-area");
 
 function bossShake() {
-    bossElement.style.animation = "shake 100ms";
+    bossElement.style.animation = "shake 150ms";
     setTimeout(() => {
         bossElement.style.animation = "";
-    }, 100);
+    }, 150);
 }
 
 function playerFlash() {
     playerElement.style.animation = "flash 100ms";
     setTimeout(() => {
         playerElement.style.animation = "";
-    }, 150);
+    }, 200);
 }
 
 document.addEventListener("keydown", (event) => {

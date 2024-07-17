@@ -1,9 +1,14 @@
+@font-face {
+    font-family: DeterminationSansWeb;
+    src: url(./style/DeterminationSansWebRegular-369X.ttf) format("truetype");
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 16;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: DeterminationSansWeb,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
@@ -40,37 +45,85 @@ body {
 }
 
 #starting-menu {
-    width: 40%;
-    height: 50%;
+    width: 60%;
+    height: 100%;
     padding: 30px;
-    background-color: rgb(87, 20, 20);
+    background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     border-radius: 10px;
+    font-size: 1.4em;
+}
+
+img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+#title {
+    width: 60%;
 }
 
 hr {
     width: 60%;
+    height: 3px;
+    background-color: white;
     margin: 7px;
 }
 
-#start-btn {
-    width: 40%;
-    height: 12%;
-    margin: 20px;
-    background-color: orange;
+#move-keys {
+    width: 70%;
+    height: 14%;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+}
+
+#move-keys img {
+    height: 100%;
+    padding: 0 10px;
+}
+
+#token {
+    width: 70%;
+    height: 14%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#token img {
+    height: 80%;
+    padding: 0 10px;
+}
+
+#start-btn {
+    width: 30%;
+    height: 12%;
+    margin: 20px;
+    background-color: rgb(74, 143, 149);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 5px rgb(26, 76, 92);
+}
+
+#start-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: rgb(86, 166, 174);
 }
 
 #start-btn p {
     width: 100%;
-    color: white;
+    color: rgb(233, 249, 250);
+    font-size: 1.6em;
     font-weight: bold;
 }
 
@@ -130,19 +183,25 @@ hr {
 }
 
 #win-reset-page-btn, #lose-reset-page-btn {
-    width: 40%;
-    height: 12%;
-    margin: 10px;
-    background-color: rgb(112, 89, 46);
+    width: 25%;
+    height: 15%;
+    margin: 20px;
+    background-color: rgb(74, 143, 149);
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    border: solid 5px rgb(26, 76, 92);
+}
+#win-reset-page-btn:hover, #lose-reset-page-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: rgb(86, 166, 174);
 }
 
 #win-reset-page-btn p, #lose-reset-page-btn p {
     width: 100%;
-    color: white;
+    color: rgb(233, 249, 250);
+    font-size: 1.6em;
     font-weight: bold;
 }
 
@@ -210,24 +269,28 @@ hr {
 #game-area {
     width: 40%;
     height: 30%;
-    border: solid 3px white;
+    border: solid 5px white;
     position: relative;
     overflow: hidden;
 }
 
 #player {
     width: 1.3em;
-    height: 1.3em;
-    background-color: blue;
+    height: 1.4em;
+    background-image: url(./style/player-soul.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
 }
 
 .rain-attack {
-    width: 1.3em;
+    width: 0.7em;
     height: 1.3em;
-    background-color: red;
+    background-image: url(./style/tear1.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -236,7 +299,9 @@ hr {
 .counter-token {
     width: 1.3em;
     height: 1.3em;
-    background-color: rgb(26, 246, 26);
+    background-image: url(./style/token.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -246,48 +311,53 @@ hr {
 /* PLAYER STATS AREA */
 
 #player-stats {
-    width: 80%;
+    width: 60%;
     height: 5%;
-    background-color: rgba(255, 166, 0, 0.644);
+    margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#player-name {
-    width: 20%;
-    height: 100%;
+h4 {
+    color: white;
+    padding: 0 10px 0 0;
 }
 
 #player-life {
     width: 30%;
     height: 40%;
     background-color: rgba(255, 255, 255, 0.762);
-    border: 1px solid white;
+    border: 2px solid white;
     display: flex;
 }
 
 #life-segment {
     width: 10%;
     height: 100%;
-    background-color: rgb(62, 104, 146);
+    background-color: rgb(88, 150, 211);
 }
 
 @keyframes shake {
     0% {
     transform: translateX(0px);
+    opacity: 1;
     }
     25% {
     transform: translateX(-5px);
+    opacity: 0.5;
     }
     50% {
     transform: translateX(5px);
+    opacity: 1;
     }
     75% {
     transform: translateX(-5px);
+    opacity: 0.5;
     }
     100% {
     transform: translateX(0px);
+    opacity: 1;
     }
 }
 
