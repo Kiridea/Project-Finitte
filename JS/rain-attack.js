@@ -24,7 +24,7 @@ class RainAttacks {
     }
 
     exit() {
-        if(this.positionY > gameArea.offsetHeight + this.element.offsetHeight) {
+        if(this.positionY > gameArea.offsetHeight - this.element.offsetHeight) {
             this.disappear();
         }
     }

@@ -90,8 +90,8 @@ function gameLoop() { //smooth movement based on framerate
         game.checkGameOver();
         game.checkGameWin();
 
-        if(game.bossLife > 10) {
-            if(frames % 50 === 0) {
+        if(game.bossLife > 15) {
+            if(frames % 40 === 0) {
                 const newAttack = new RainAttacks(3)
                 game.rainAttacks.push(newAttack);
             };
@@ -102,8 +102,8 @@ function gameLoop() { //smooth movement based on framerate
             };
         }
 
-        if(game.bossLife <= 10) {
-            if(frames % 30 === 0) {
+        if(game.bossLife <= 15) {
+            if(frames % 20 === 0) {
                 const newAttack = new RainAttacks(3)
                 game.rainAttacks.push(newAttack);
             };
@@ -116,8 +116,8 @@ function gameLoop() { //smooth movement based on framerate
 
         }
 
-        if(game.bossLife <= 5) {
-            if(frames % 15 === 0) {
+        if(game.bossLife <= 7) {
+            if(frames % 10 === 0) {
                 const newAttack = new RainAttacks(3)
                 game.rainAttacks.push(newAttack);
             };

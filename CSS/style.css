@@ -27,6 +27,12 @@ body {
     align-items: center;
 }
 
+img {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
 
 
 /* START SCREEN */
@@ -35,7 +41,7 @@ body {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    z-index: 3;
+    z-index: 4;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,12 +62,6 @@ body {
     text-align: center;
     border-radius: 10px;
     font-size: 1.4em;
-}
-
-img {
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
 }
 
 #title {
@@ -139,21 +139,29 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(155, 0, 0, 0.323);
     color: white;
 }
 
 #game-over-menu {
-    width: 60%;
-    height: 50%;
+    width: 45%;
+    height: 51%;
+    margin-top: 65px;
     padding: 30px;
-    background-color: rgb(87, 20, 20);
+    z-index: 3;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     border-radius: 10px;
+}
+
+#lose-frame {
+    position: absolute;
+    width:45%;
+    height: 60%;
+    z-index: 2;
 }
 
 #win-screen {
@@ -165,15 +173,16 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(45, 10, 10);
+    background-color: black;
     color: white;
 }
 
 #win-menu {
-    width: 40%;
-    height: 50%;
+    width: 45%;
+    height: 51%;
+    margin-top: 65px;
     padding: 30px;
-    background-color: rgb(87, 20, 20);
+    z-index: 3;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -182,8 +191,23 @@ hr {
     border-radius: 10px;
 }
 
+#win-frame {
+    position: absolute;
+    width:45%;
+    height: 60%;
+    z-index: 2;
+}
+
+#win-title, #lose-title {
+    width: 70%;
+}
+
+#endgame-message {
+    margin: 20px 0 10px 0;
+}
+
 #win-reset-page-btn, #lose-reset-page-btn {
-    width: 25%;
+    width: 40%;
     height: 15%;
     margin: 20px;
     background-color: rgb(74, 143, 149);
@@ -281,6 +305,8 @@ hr {
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
+    top: 0;
+    left: 0;
     
 }
 
@@ -378,7 +404,7 @@ h4 {
     }
 }
 
-#ruler{
+/* #ruler{
     position: absolute;
     height: 100vh;
     width: 2px;
@@ -387,4 +413,4 @@ h4 {
     left: 50%;
     top: 0;
     z-index: 99999;
-}
+} */

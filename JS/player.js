@@ -10,9 +10,9 @@ const player = {
     initializePosition() {
         console.log("GAME AREA OFFSETWIDTH: ",gameArea.offsetWidth / 2);
         console.log("ELEMENT OFFSETWIDTH" ,this.element.offsetWidth);
-        this.positionX = (gameArea.offsetWidth / 2 - this.element.offsetWidth/2);
+        this.positionX = (gameArea.clientWidth / 2 - this.element.clientWidth/2);
         console.log(this.positionX);
-        this.positionY = (gameArea.offsetHeight / 2) - (this.element.offsetHeight / 2);
+        this.positionY = (gameArea.clientHeight / 2) - (this.element.clientHeight / 2);
     },
 
     move() { //player movement
