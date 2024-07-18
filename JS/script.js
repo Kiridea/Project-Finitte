@@ -5,11 +5,14 @@ const gameOverScreen = document.querySelector("#game-over-screen");
 const winScreen = document.querySelector("#win-screen");
 const bossElement = document.querySelector("#boss");
 const playerElement = document.querySelector("#player");
+const click = document.querySelector("#click");
 
 startGameButton.addEventListener("click", () => {
     game.hasStarted = true;
     startingScreen.style.display = "none";
     player.initializePosition();
+    click.load();
+    click.play();
 });
 
 const game = {
@@ -26,7 +29,11 @@ const game = {
             this.isOver = true;
             const exitButton = document.querySelector("#lose-reset-page-btn")
             exitButton.addEventListener("click", () => {
-                location.reload();
+                click.load();
+                click.play();
+                setTimeout(() => {
+                    location.reload();
+                }, 150)
             })
         }
     },
@@ -37,7 +44,11 @@ const game = {
             this.win = true;
             const exitButton = document.querySelector("#win-reset-page-btn")
             exitButton.addEventListener("click", () => {
-                location.reload();
+                click.load();
+                click.play();
+                setTimeout(() => {
+                    location.reload();
+                }, 150)
             })
         }
     }
@@ -65,6 +76,22 @@ function playerFlash() {
     setTimeout(() => {
         playerElement.style.animation = "";
     }, 200);
+}
+
+function hitPlayer() {
+    const hitPlayer = document.querySelector("#player-hit");
+    hitPlayer.load();
+    hitPlayer.play();
+}
+function hitBoss() {
+    const hitBoss = document.querySelector("#boss-hit");
+    hitBoss.load();
+    hitBoss.play();
+}
+function getToken() {
+    const getToken = document.querySelector("#token-get")
+    getToken.load();
+    getToken.play();
 }
 
 document.addEventListener("keydown", (event) => {

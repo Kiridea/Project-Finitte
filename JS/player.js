@@ -98,12 +98,12 @@ const player = {
             this.positionY = 0;
         }
 
-        if (this.positionX >= gameArea.offsetWidth - this.element.offsetWidth) {
-            this.positionX = gameArea.offsetWidth - this.element.offsetWidth;
+        if (this.positionX >= gameArea.clientWidth - this.element.clientWidth) {
+            this.positionX = gameArea.clientWidth - this.element.clientWidth;
         }
 
-        if (this.positionY >= gameArea.offsetHeight - this.element.offsetHeight) {
-            this.positionY = gameArea.offsetHeight - this.element.offsetHeight;
+        if (this.positionY >= gameArea.clientHeight - this.element.clientHeight) {
+            this.positionY = gameArea.clientHeight - this.element.clientHeight;
         }
     },
 
@@ -128,10 +128,13 @@ const player = {
                 console.log("ouch");
                 entity.disappear();
                 if(string === "attacks") {
+                    hitPlayer();
                     game.playerLife--;
                     playerLifeElement.innerHTML = `<div id="life-segment"></div>`.repeat(game.playerLife);
                     playerFlash();
                 } else if (string === "tokens") {
+                    getToken();
+                    hitBoss();
                     game.bossLife--;
                     bossLifeElement.innerHTML = `<div id="boss-life-segment"></div>`.repeat(game.bossLife);
                     bossShake();

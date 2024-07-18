@@ -199,7 +199,7 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: rgb(8, 72, 90);
     color: white;
 }
 
@@ -225,6 +225,7 @@ hr {
 }
 
 #win-title, #lose-title {
+    margin-top: 30px;
     width: 60%;
 }
 
@@ -319,6 +320,13 @@ hr {
     width: 100%;
 }
 
+#shadow {
+    width: 50%;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.223);
+    border-radius: 50%;
+}
+
 
 
 /* GAMEPLAY AREA */
@@ -394,6 +402,14 @@ h4 {
     width: 10%;
     height: 100%;
     background-color: rgb(88, 150, 211);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    color: rgba(190, 190, 190, 0.586);
+    padding: 10px;
+    z-index: 10;
 }
 
 @keyframes shake {

@@ -1,7 +1,9 @@
 # Project Finitte
 
 ## Project Description
-My game consists of a boss battle inspired in Undertale. The gameplay is a vertical infinite scrol, where the attack of the boss rains on the player. To win, the goal of the player is to survive the enemy's attack by avoiding it with the movement keys and collect counter-attack tokens, which will also be raining down with less frequency, to chip away at the life bar and defeat the boss.
+My game consists of a boss battle inspired in Undertale. The gameplay is a vertical infinite scroll, where the attack of the boss rains on the player. To win, the goal of the player is to survive the enemy's attack by avoiding it with the movement keys and collect counter-attack tokens, which will also be raining down with less frequency, to chip away at the life bar and defeat the boss.
+
+#### Game link: https://kiridea.github.io/Project-Finitte/
 
 ## Project Planning
 ### Day 1
@@ -38,6 +40,14 @@ Polish code and replace the placeholders with the official designs.
 - Revise code
 - Correct mistakes and inconsistencies
 - Import and apply the final designs of the elements
+- Polish designs and gameplay
 - Prepare presentation
 
 ## Project Report
+The project was completed successfully within the allotted time. Simplicity and practicality were paramount for the development of the game in order to get plenty of time to correct and add anything that needed fixing or adjusting before the deadline.
+
+Some difficulties that I found during the process were concerning the front end of the project, properly aligning elements and applying styles for a consistent look was the most time-consuming part (partially because the visual elements were drawn from scratch), but were ultimately achieved through trial and error. 
+
+As for the logic, the most issues I had was with the collision mechanic and the player interacting with the environment and the raining elements. For the player to move around and detect collisions it was necessary to write repetitive lines of code so all possibilities of the gameplay were taken into account and properly defined. The code in itself isn't very complex, but the challenge of dealing with lines that are slight variations of each other lies in correctly giving each command its corresponding outcome and a single character could output an error.
+
+All in all, it was a project that really enhanced my interest for coding. The difficulties made way for plenty of experiences to acquire which will be useful for future projects and the freedom to choose the theme made it incredibly engaging.

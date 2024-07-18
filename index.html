@@ -71,6 +71,10 @@
                 <img src="./CSS/style/column-right.png" alt="right column">
                 <img src="./CSS/style/column-right.png" alt="right column">
             </section>
+            <audio id="player-hit" src="./CSS/style/player-hit.wav" preload="auto"></audio>
+            <audio id="token-get"src="./CSS/style/get-token.wav" preload="auto"></audio>
+            <audio id="boss-hit" src="./CSS/style/boss-hit.wav" preload="auto"></audio>
+            <audio id="click" src="./CSS/style/click.wav" preload="auto"></audio>
         </div>
     </section>
 
@@ -78,6 +82,7 @@
         <div id="game-over-menu">
             <img id="lose-title" src="./CSS/style/lose-title.png" alt="you lose title">
             <div id="endgame-message">
+                <h2>Your soul burned out</h2>
                 <p>Finitte proved to be too strong...</p>
             </div>
             <div id="lose-reset-page-btn">
@@ -85,6 +90,7 @@
             </div>
         </div>
         <img id="lose-frame" src="./CSS/style/lose-menu-frame-compact.png" alt="lose menu frame">
+        <div id="shadow"></div>
     </section>
 
     <section id="win-screen">
@@ -99,9 +105,12 @@
             </div>
         </div>
         <img src="./CSS/style/win-menu-fram-compact.png" alt="win menu frame" id="win-frame">
+        <div id="shadow"></div>
     </section>
 
-
+<footer>
+    <small>Designed and developed by Kiridea</small>
+</footer>
 
     <script src="./JS/script.js"></script>
     <script src="./JS/player.js"></script>
