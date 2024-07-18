@@ -12,7 +12,7 @@
 }
 
 html {
-    background-color: #800020;
+    background-color: rgba(87, 5, 21);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,6 +33,33 @@ img {
     image-rendering: crisp-edges;
 }
 
+/* COLUMNS */
+
+#columns {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+#column-left, #column-right {
+    width: 20%;
+    height: 100%;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+}
+
+#gap {
+    width: 60%;
+}
+
+#columns img {
+    width: 30%;
+    height: 100%;
+}
 
 
 /* START SCREEN */
@@ -41,12 +68,11 @@ img {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    z-index: 4;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(45, 10, 10, 0.5);
+    background-color: rgba(87, 5, 21);
     color: white;
 }
 
@@ -54,13 +80,13 @@ img {
     width: 60%;
     height: 100%;
     padding: 30px;
+    z-index: 4;
     background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 10px;
     font-size: 1.4em;
 }
 
@@ -139,7 +165,7 @@ hr {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(155, 0, 0, 0.323);
+    background-color: rgb(87, 5, 21);
     color: white;
 }
 
@@ -199,7 +225,7 @@ hr {
 }
 
 #win-title, #lose-title {
-    width: 70%;
+    width: 60%;
 }
 
 #endgame-message {
@@ -248,9 +274,8 @@ hr {
 
 #boss-area {
     width: 100%;
-    height: 50%;
+    height: 56%;
     z-index: 1;
-    background-color: #8000206f;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -269,6 +294,7 @@ hr {
 #boss-life {
     width: 70%;
     height: 5%;
+    margin-top: 5px;
     background-color: rgba(255, 255, 255, 0.762);
     border: 1px solid white;
     display: flex;
@@ -281,9 +307,16 @@ hr {
 }
 
 #boss {
-    width: 50%;
+    width: 80%;
     height: 95%;
-    background-color: #801e00ac;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#boss img {
+    width: 100%;
 }
 
 

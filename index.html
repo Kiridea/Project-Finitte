@@ -15,7 +15,7 @@
             <img id="title" src="./CSS/style/titleV2.png" alt="Finitte Title">
             <hr>
             <h2>Goal</h2>
-            <p>Use the movement keys to <span style="color:red">avoid</span> the attacks</p> 
+            <p>Use the movement keys to <span style="color:red">avoid</span> the attacks</p>
             <div id="move-keys">
                 <img src="./CSS/style/movement-keys-arrows.png" alt="arrow movement keys">
                 <p>or</p>
@@ -30,24 +30,50 @@
                 <p>START</p>
             </div>
         </div>
+        <div id="columns">
+            <section id="column-left">
+                <img src="./CSS/style/column-left.png" alt="left column">
+                <img src="./CSS/style/column-left.png" alt="left column">
+            </section>
+            <div id="gap"></div>
+            <section id="column-right">
+                <img src="./CSS/style/column-right.png" alt="right column">
+                <img src="./CSS/style/column-right.png" alt="right column">
+            </section>
+        </div>
     </section>
+
     <section id="main-screen">
         <section id="boss-area">
             <div id="boss-name">
-                <h3>Finitte</h3>
-                <h6>- The Weeping Flame -</h6>
+                <h2>Finitte</h2>
+                <h4>— The Weeping Flame —</h4>
             </div>
             <div id="boss-life"></div>
-            <div id="boss"></div>
+            <div id="boss">
+                <img src="./CSS/style/finitte.png" alt="Finitte sprite">
+            </div>
         </section>
         <section id="game-area">
             <div id="player"></div>
         </section>
         <section id="player-stats">
-                <h4>SOUL ESSENCE :</h4>
+            <h4>SOUL ESSENCE :</h4>
             <div id="player-life"></div>
         </section>
+        <div id="columns">
+            <section id="column-left">
+                <img src="./CSS/style/column-left.png" alt="left column">
+                <img src="./CSS/style/column-left.png" alt="left column">
+            </section>
+            <div id="gap"></div>
+            <section id="column-right">
+                <img src="./CSS/style/column-right.png" alt="right column">
+                <img src="./CSS/style/column-right.png" alt="right column">
+            </section>
+        </div>
     </section>
+
     <section id="game-over-screen">
         <div id="game-over-menu">
             <img id="lose-title" src="./CSS/style/lose-title.png" alt="you lose title">
@@ -60,6 +86,7 @@
         </div>
         <img id="lose-frame" src="./CSS/style/lose-menu-frame-compact.png" alt="lose menu frame">
     </section>
+
     <section id="win-screen">
         <div id="win-menu">
             <img id="win-title" src="./CSS/style/win-title.png" alt="you win title">
@@ -73,9 +100,11 @@
         </div>
         <img src="./CSS/style/win-menu-fram-compact.png" alt="win menu frame" id="win-frame">
     </section>
+
+
+
     <script src="./JS/script.js"></script>
     <script src="./JS/player.js"></script>
-    <script src="./JS/boss.js"></script>
     <script src="./JS/rain-attack.js"></script>
     <script src="./JS/counter-token.js"></script>
 </body>
